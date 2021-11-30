@@ -1853,8 +1853,6 @@ ifneq ($(cmd_files),)
 endif
 
 
-endif	# skip-makefile
-
 PHONY += FORCE
 FORCE:
 
