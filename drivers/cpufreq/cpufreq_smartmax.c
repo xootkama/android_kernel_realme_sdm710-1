@@ -935,7 +935,7 @@ static ssize_t store_ignore_nice(struct kobject *a, struct attribute *b,
 static struct global_attr _name##_attr =	\
 	__ATTR(_name, 0644, show_##_name, store_##_name)
 
-define_global_rw_attr(debug_mask);
+
 define_global_rw_attr(up_rate);
 define_global_rw_attr(down_rate);
 define_global_rw_attr(ramp_up_step);
