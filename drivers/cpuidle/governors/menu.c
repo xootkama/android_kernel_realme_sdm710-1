@@ -284,6 +284,7 @@ static int menu_select(struct cpuidle_driver *drv, struct cpuidle_device *dev)
 {
 	struct menu_device *data = this_cpu_ptr(&menu_devices);
 	int latency_req = pm_qos_request(PM_QOS_CPU_DMA_LATENCY);
+	int power_usage = INT_MAX;
 	int i;
 	unsigned int interactivity_req;
 	unsigned int expected_interval;
