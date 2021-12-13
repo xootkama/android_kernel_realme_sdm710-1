@@ -720,7 +720,7 @@ KBUILD_CFLAGS	+= $(lto-flags)
 DISABLE_LTO	:= $(DISABLE_LTO_CLANG)
 export DISABLE_LTO
 
-# LDFINAL_vmlinux and LDFLAGS_FINAL_vmlinux can be set to override
+# LDFINAL_vmlinux and LDFLAGS_FINAL_f can be set to override
 # the linker and flags for vmlinux_link.
 export LDFINAL_vmlinux LDFLAGS_FINAL_vmlinux
 endif
@@ -1074,7 +1074,7 @@ ARCH_POSTLINK := $(wildcard $(srctree)/arch/$(SRCARCH)/Makefile.postlink)
 
 # Final link of vmlinux with optional arch pass after final link
     cmd_link-vmlinux =                                                 \
-	$(CONFIG_SHELL) $< $(LD) $(LDFLAGS) $(LDFLAGS_vmlinux) ;       \
+	$(CONFIG_SHELL) $< $(LD) ;       \
 	$(if $(ARCH_POSTLINK), $(MAKE) -f $(ARCH_POSTLINK) $@, true)
 
 vmlinux: scripts/link-vmlinux.sh vmlinux_prereq $(vmlinux-deps) FORCE
